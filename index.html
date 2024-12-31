@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMART_SHELF-Novel Recommendation System</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+
+
+    .book-img {
+            width: 50px;   /* Set image width */
+            height: 70px;  /* Set image height */
+            object-fit: cover; /* Ensures the image maintains its aspect ratio */
+        }
+</style>
+<body style ="background-color:black">
+ <nav class ="navbar" style="background-color:#FFD700">
+     <a class="navbar-brand"><h class="text-blue"  style="font-size:40px">SMART SHELF: Novel Recommender</h> </a>
+     <ul class="nav navbar-nav">
+         <li><a href="/">Home</a></li>
+          <li><a href="/recommend">Recommend</a></li>
+          <li><a href="/">Contact</a></li>
+     </ul>
+ </nav>
+<div class ="container">
+    <div class="row">
+        <div class ="col-10">
+            <h1 class="text-white"  style="font-size:40px">Top 50 Books</h1>
+        </div>
+        {% for i in range(book_name|length) %}
+        <div class ="col-md-3" style="margin-top:50px">
+            <div class="card">
+                <div class ="card-body">
+                    <img class="card-img-top" src="{{image[i]}}" style="width: 200px; height: 300px; object-fit: cover;"> >
+                    <p>{{book_name[i]}}</p>
+                    <p>{{ author[i]}}</p>
+                    <p> Votes - {{votes[i]}}</p>
+                    <p>Rating -{{rating[i]}}</p>
+                </div>
+            </div>
+        </div>
+         {% endfor%}
+        <div class ="col-md-3" style="margin-top:50px">
+            <div class="card">
+                <div class ="card-body">
+                    <img class="card-img-top" src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg"  style="width: 200px; height: 300px; object-fit: cover;"> >
+                    <h3>Harry Potter</h3>
+                    <p>J K Rowling</p>
+                    <p> Votes - 300</p>
+                    <p>Rating -5.6</p>
+                </div>
+            </div>
+        </div>
+        <div class ="col-md-3" style="margin-top:50px">
+            <div class="card">
+                <div class ="card-body">
+                    <img class="card-img-top" src="http://images.amazon.com/images/P/0385504209.01.MZZZZZZZ.jpg" style="width: 200px; height: 300px; object-fit: cover;" >
+
+                    <h3>The Da Vinci Code</h3>
+                    <p>Dan Brown</p>
+                    <p> Votes - 893</p>
+                    <p>Rating -4.6</p>
+                </div>
+            </div>
+        </div>
+
+        <div class ="col-md-3" style="margin-top:50px">
+            <div class="card">
+                <div class ="card-body">
+                    <img class="card-img-top" src="http://images.amazon.com/images/P/0786868716.01.MZZZZZZZ.jpg" style="width: 200px; height: 300px; object-fit: cover;">
+                    <h3>The Five People You Meet in Heaven	</h3>
+                    <p>Mitch Albom</p>
+                    <p> Votes - 430</p>
+                    <p>Rating -4.9</p>
+                </div>
+            </div>
+        </div>
+
+        <div class ="col-md-3" style="margin-top:50px">
+            <div class="card">
+                <div class ="card-body">
+                    <img class="card-img-top" src="http://images.amazon.com/images/P/0316666343.01.MZZZZZZZ.jpg" style="width: 200px; height: 300px; object-fit: cover;">
+                    <h3>The Lovely Bones: A Novel	</h3>
+                    <p>Alice Sebold</p>
+                    <p> Votes - 1295	</p>
+                    <p>Rating -4.4</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
